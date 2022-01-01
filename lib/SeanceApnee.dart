@@ -6,5 +6,7 @@ class SeanceApnee {
   String date;
   String description;
 
+  //saison, Séquence, numéro
+
   SeanceApnee(this.discipline, this.numero, this.animateur, this.videoURL, this.date, this.description);
 }

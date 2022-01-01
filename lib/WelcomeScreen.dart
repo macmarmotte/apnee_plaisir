@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +36,12 @@ class WelcomeScreen extends StatelessWidget {
                   color: Colors.lightBlue,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: const Text('Apnee Statique'),
+                child: const Text('Apnee Statique',
+                  style:
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  textAlign:
+                    TextAlign.center,
+                ),
               ),
             ),
           ),
@@ -53,7 +61,12 @@ class WelcomeScreen extends StatelessWidget {
                   color: Colors.lightBlue,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: const Text('Apnee Dynamique'),
+                child: const Text('Apnee Dynamique',
+                  style:
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  textAlign:
+                    TextAlign.center,
+                ),
               ),
             ),
           ),
@@ -73,7 +86,12 @@ class WelcomeScreen extends StatelessWidget {
                   color: Colors.lightBlue,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: const Text('YOGA'),
+                child: const Text('YOGA',
+                  style:
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  textAlign:
+                    TextAlign.center,
+                ),
               ),
             ),
           ),
