@@ -1,5 +1,10 @@
-import 'package:apnee_plaisir/WelcomeScreen.dart';
+import 'package:apnee_plaisir/SeanceApnee.dart';
 import 'package:flutter/material.dart';
+import 'package:apnee_plaisir/WelcomeScreen.dart';
+import 'package:apnee_plaisir/SessionsApneeList.dart';
+import 'package:apnee_plaisir/SessionsScreen.dart';
+
+import 'SessionsApneeListScreenSTA.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,33 +27,35 @@ class MyApp extends StatelessWidget {
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch(settings.name) {
+    switch (settings.name) {
       case '/' :
         return MaterialPageRoute(builder: (context) => WelcomeScreen());
-
-        /*
-      case '/sessions':
-        return PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation)=> SessionsScreen(seanceApnee: settings.arguments),
-            transitionsBuilder: (context, animation, secondaryAnimation, child) {
-              animation = CurvedAnimation(curve: Curves.ease, parent: animation);
-              return FadeTransition(
-                opacity:animation,
-                child: child,
-              );
-            }
-        );
-        */
-
+      case '/SessionsApneeSTA' :
+          return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) => SessionsApneeListScreenSTA(),
+              transitionsBuilder: (context, animation, secondaryAnimation,
+                  child) {
+                animation =
+                    CurvedAnimation(curve: Curves.ease, parent: animation);
+                return FadeTransition(
+                  opacity: animation,
+                  child: child,
+                );
+              }
+          );
       default:
-        return MaterialPageRoute(
-            builder: (context) => Scaffold(
-                appBar: AppBar(title:Text("Error"), centerTitle: true),
-                body: Center(
-                  child: Text("Page not found"),
-                )
-            )
-        );
+        return pageNotFound();
     }
   }
-}
+
+    static MaterialPageRoute pageNotFound() {
+      return MaterialPageRoute(
+          builder: (context) => Scaffold(
+              appBar: AppBar(title:Text("Error"), centerTitle: true),
+              body: Center(
+                child: Text("Page not found"),
+              )
+          )
+      );
+    }
+  }

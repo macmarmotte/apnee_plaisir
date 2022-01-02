@@ -1,7 +1,9 @@
 import 'package:apnee_plaisir/SeanceApnee.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class SessionsApneeList  {
-  final List<SeanceApnee> sessionsApnee_STA = [
+  final List<SeanceApnee> sessionsApneeListSTA = [
     SeanceApnee(
       "STA",
       1,

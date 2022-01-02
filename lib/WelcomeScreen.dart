@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:apnee_plaisir/SessionsApneeList.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +12,24 @@ class WelcomeScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Image.asset(
-            'images/apneiste.png',
-            width: 600,
-            height: 240,
-            fit:BoxFit.cover,
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Image.asset(
+              'images/apneiste.png',
+              width: 600,
+              height: 240,
+              fit:BoxFit.cover,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: GestureDetector(
               // When the child is tapped, show a snackbar.
               onTap: () {
-                const snackBar = SnackBar(content: Text('Tap'));
-
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              },
+                Navigator.pushNamed(
+                    context,
+                    '/SessionsApneeSTA');
+                },
               // The custom button
               child: Container(
                 padding: const EdgeInsets.all(12.0),
@@ -50,9 +51,10 @@ class WelcomeScreen extends StatelessWidget {
             child: GestureDetector(
               // When the child is tapped, show a snackbar.
               onTap: () {
-                const snackBar = SnackBar(content: Text('Tap'));
-
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Navigator.pushNamed(
+                    context,
+                    '/SessionsApneeSTA',
+                );
               },
               // The custom button
               child: Container(
@@ -75,9 +77,7 @@ class WelcomeScreen extends StatelessWidget {
             child: GestureDetector(
               // When the child is tapped, show a snackbar.
               onTap: () {
-                const snackBar = SnackBar(content: Text('Tap'));
-
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Navigator.pushNamed(context, '/SessionsApneeSTA');
               },
               // The custom button
               child: Container(
@@ -100,3 +100,4 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
+

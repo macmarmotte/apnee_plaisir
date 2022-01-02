@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:apnee_plaisir/SessionsApneeList.dart';
 import 'package:apnee_plaisir/SeanceApnee.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:apnee_plaisir/WelcomeScreen.dart';
 
-/*
-
-class SessionsApneeListScreen extends StatelessWidget {
-  // const SessionsApneeListScreen({Key? key, @required SessionsApneeList}) : super(key: key);
+class SessionsApneeListScreenSTA extends StatelessWidget {
 
   final List<SeanceApnee> sessionsApneeListSTA = [
     SeanceApnee(
@@ -27,31 +23,32 @@ class SessionsApneeListScreen extends StatelessWidget {
     )
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+        appBar: AppBar(
           title: Text("Replay Apnee Statique")
-      ),
+        ),
       body: ListView.builder(
         itemCount: sessionsApneeListSTA.length,
         itemBuilder: (context, index){
-          return sessionApneeWidget(SeanceApnee : sessionsApneeListSTA[index])
-          },
+          final seanceApnee = sessionsApneeListSTA[index];
+          return Text(seanceApnee.description);
+          //return SeanceApneeItemWidget(seanceApnee: seanceApnee)
+        },
       ),
     );
   }
 }
 
-class sessionApneeWidget extends StatelessWidget {
-  const sessionApneeWidget({Key? key}, @required this.seanceApnee) : super(key: key);
-  final SeanceApnee seanceApnee
+/*
+class SeanceApneeItemWidget extends StatelessWidget {
+  const SeanceApneeItemWidget({Key? key, @required this.seanceApnee}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Text(this.description);
   }
 }
-
 */
+
