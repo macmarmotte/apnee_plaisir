@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:apnee_plaisir/SeanceApnee.dart';
 import 'package:apnee_plaisir/WelcomeScreen.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 
 class SessionsApneeListScreenSTA extends StatelessWidget {
 
@@ -23,6 +26,15 @@ class SessionsApneeListScreenSTA extends StatelessWidget {
     )
   ];
 
+  YoutubePlayerController _controller = YoutubePlayerController(
+    initialVideoId: 'UzHFKlErmWU',
+    flags: YoutubePlayerFlags(
+      autoPlay: true,
+      mute: true,
+    ),
+  );
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,22 +45,60 @@ class SessionsApneeListScreenSTA extends StatelessWidget {
         itemCount: sessionsApneeListSTA.length,
         itemBuilder: (context, index){
           final seanceApnee = sessionsApneeListSTA[index];
-          return Text(seanceApnee.description);
-          //return SeanceApneeItemWidget(seanceApnee: seanceApnee)
+          return SeanceApneeWidget(seanceApnee: seanceApnee);
         },
       ),
     );
   }
 }
 
-/*
-class SeanceApneeItemWidget extends StatelessWidget {
-  const SeanceApneeItemWidget({Key? key, @required this.seanceApnee}) : super(key: key);
+class SeanceApneeWidget extends StatelessWidget {
+  const SeanceApneeWidget({
+    Key? key,
+    required this.seanceApnee,
+  }) : super(key: key);
+
+  final SeanceApnee seanceApnee;
 
   @override
   Widget build(BuildContext context) {
-    return Text(this.description);
+    return Container(
+      child: Column(
+          children: [
+            Container(
+                child: Text(seanceApnee.videoURL)
+            ),
+            Column(
+              children: [
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child: Text("Séance " + seanceApnee.discipline + " " + seanceApnee.numero.toString(),
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.blue
+                          )
+                      ),
+                    ),
+                ),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      child: Text("Par : " + seanceApnee.animateur,
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.blue
+                          ),
+                      ),
+                    ),
+                ),
+              ],
+            ),
+          ],
+      ),
+    );
   }
 }
-*/
 
