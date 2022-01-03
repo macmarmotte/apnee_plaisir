@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:apnee_plaisir/WelcomeScreen.dart';
 import 'package:apnee_plaisir/SessionsApneeList.dart';
 import 'package:apnee_plaisir/SessionsScreen.dart';
+import 'package:apnee_plaisir/videoplayer.dart';
 
 import 'SessionsApneeListScreenSTA.dart';
 
@@ -32,7 +33,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => WelcomeScreen());
       case '/SessionsApneeSTA' :
           return PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => SessionsApneeListScreenSTA(),
+              pageBuilder: (context, animation, secondaryAnimation) => VideoPlayerScaffold(),
               transitionsBuilder: (context, animation, secondaryAnimation,
                   child) {
                 animation =

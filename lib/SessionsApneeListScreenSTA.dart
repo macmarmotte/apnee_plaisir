@@ -65,9 +65,13 @@ class SeanceApneeWidget extends StatelessWidget {
     return Container(
       child: Column(
           children: [
+
+
             Container(
                 child: Text(seanceApnee.videoURL)
             ),
+
+
             Column(
               children: [
                 Align(
