@@ -8,6 +8,7 @@ class VideoPlayerScaffold extends StatefulWidget {
   const VideoPlayerScaffold({Key? key}) : super(key: key);
 
   @override
+
   _VideoPlayerScaffoldState createState() => _VideoPlayerScaffoldState();
 }
 
@@ -29,22 +30,22 @@ class _VideoPlayerScaffoldState extends State<VideoPlayerScaffold> {
           title: Text("Replay Apnee Statique"),
         ),
       body:
-        ListView(
-          children: [
-            YoutubePlayerBuilder(
-              player: YoutubePlayer(
-                controller: _controller,
-              ),
-              builder: (context, player) {
-                return Column(
+      ListView(
+        children: [
+          YoutubePlayerBuilder(
+            player: YoutubePlayer(
+              controller: YoutubePlayerController(initialVideoId: 'QKCz-Ze5uhw'),
+            ),
+            builder: (context, player) {
+              return Column(
                   children:[
                     player,
                   ]
-                );
-              },
-            ),
-          ],
-        ),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }

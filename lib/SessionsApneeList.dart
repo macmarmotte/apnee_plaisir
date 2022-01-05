@@ -8,7 +8,7 @@ class SessionsApneeList  {
       "STA",
       1,
       "Philippe Valentin",
-      "https://www.youtube.com/QKCz-Ze5uhw",
+      "https://www.youtube.com/watch?v=QKCz-Ze5uhw",
       "21/11/2021",
       "Séance d'apnée numéro 1",
     ),
